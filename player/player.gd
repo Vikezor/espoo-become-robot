@@ -32,8 +32,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var move_left := Input.is_action_pressed(&"move_left")
 	var move_right := Input.is_action_pressed(&"move_right")
 	var jump := Input.is_action_pressed(&"jump")
-	var shoot := Input.is_action_pressed(&"shoot")
-	var spawn := Input.is_action_just_pressed(&"spawn")
+	#var shoot := Input.is_action_pressed(&"shoot")
+	#var spawn := Input.is_action_just_pressed(&"spawn")
 
 	#if spawn:
 		#_spawn_enemy_above.call_deferred()
@@ -158,7 +158,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		anim = new_anim
 		#animation_player.play(anim)
 
-	shooting = shoot
+	#shooting = shoot
 
 	# Apply floor velocity.
 	if found_floor:

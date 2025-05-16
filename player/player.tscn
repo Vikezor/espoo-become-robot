@@ -6,6 +6,10 @@
 size = Vector2(20, 40)
 
 [node name="Player" type="RigidBody2D"]
+lock_rotation = true
+custom_integrator = true
+contact_monitor = true
+max_contacts_reported = 4
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

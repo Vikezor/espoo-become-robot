@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Espoo: Become Robot"
-run/main_scene="uid://dxy0nyfnjr5j2"
+run/main_scene="uid://bhm2qv6sy3h0k"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

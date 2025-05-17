@@ -12,6 +12,7 @@ size = Vector2(20, 40)
 collision_layer = 2
 collision_mask = 2
 input_pickable = true
+mass = 0.035
 physics_material_override = SubResource("PhysicsMaterial_oul6g")
 lock_rotation = true
 custom_integrator = true

@@ -8,7 +8,7 @@ const level_scene = preload("res://test/testlevel.tscn")
 
 func _on_parts_part_clicked(part):
 	spawned_part = part.duplicate()
-	spawned_part.set_attachment(player)
+	spawned_part.set_attachment(player.get_path())
 	player.add_child(spawned_part)
 
 

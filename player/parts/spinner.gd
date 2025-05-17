@@ -1,7 +1,7 @@
 class_name Spinner extends Part
 
 
-func set_attachment(node: PhysicsBody2D):
+func set_attachment(node: NodePath):
 	$PinJoint2D.node_a = node
 
 

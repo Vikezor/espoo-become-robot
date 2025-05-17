@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bft274drpm1m0"]
+
+[ext_resource type="Script" uid="uid://exrqx04hsnbl" path="res://player/parts/static.gd" id="1_2vd8t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oul6g"]
+size = Vector2(20, 66)
+
+[node name="Static" type="RigidBody2D"]
+mass = 0.015
+physics_material_override = SubResource("PhysicsMaterial_rkbax")
+script = ExtResource("1_2vd8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_oul6g")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(-10, -56, -10, 10, 10, 10, 10, -56)

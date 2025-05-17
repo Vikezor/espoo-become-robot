@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Player extends RigidBody2D
 
 const WALK_ACCEL = 1000.0
 const WALK_DEACCEL = 1000.0

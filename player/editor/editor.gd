@@ -6,6 +6,7 @@ var clicking := false
 
 func _on_parts_part_clicked(part):
 	spawned_part = part.duplicate()
+	spawned_part.player = $CenterContainer/Container/Player
 	$CenterContainer/Container/Player.add_child(spawned_part)
 
 

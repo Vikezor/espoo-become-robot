@@ -12,4 +12,5 @@ signal clicked(part: Part, event: InputEvent)
 
 
 func _on_gui_input(event):
-	emit_signal("clicked", part, event)
+	if event is InputEventMouseButton:
+		emit_signal("clicked", part, event)

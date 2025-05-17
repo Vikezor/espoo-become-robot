@@ -1,5 +1,7 @@
 class_name PartEntry extends HBoxContainer
 
+signal clicked(part: Part, event: InputEvent)
+
 @export var part: Part:
 	get:
 		return part
@@ -7,3 +9,7 @@ class_name PartEntry extends HBoxContainer
 		part = value
 		$Label.text = value.get_part_name()
 		# TODO: set the icon
+
+
+func _on_gui_input(event):
+	emit_signal("clicked", part, event)

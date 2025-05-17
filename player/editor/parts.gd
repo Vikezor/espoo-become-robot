@@ -13,5 +13,5 @@ func _ready():
 		add_child(entry)
 		entry.clicked.connect(_on_clicked)
 
-func _on_clicked(part: Part, event: InputEvent):
+func _on_clicked(part: Part, event: InputEventMouseButton):
 	emit_signal("part_clicked", part, event)

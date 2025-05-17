@@ -1,7 +1,7 @@
 class_name Part extends RigidBody2D
 
 
-func set_player(player: Player):
+func set_attachment(node: PhysicsBody2D):
 	pass
 
 

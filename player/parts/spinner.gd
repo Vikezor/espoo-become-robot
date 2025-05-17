@@ -1,8 +1,8 @@
 class_name Spinner extends Part
 
 
-func set_player(player: Player):
-	$PinJoint2D.node_a = player
+func set_attachment(node: PhysicsBody2D):
+	$PinJoint2D.node_a = node
 
 
 func get_part_name():

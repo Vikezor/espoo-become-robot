@@ -1,5 +1,7 @@
 class_name Player extends RigidBody2D
 
+signal clicked(node: PhysicsBody2D)
+
 const WALK_ACCEL = 1000.0
 const WALK_DEACCEL = 1000.0
 const WALK_MAX_VELOCITY = 200.0
@@ -194,3 +196,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	#var enemy := ENEMY_SCENE.instantiate() as RigidBody2D
 	#enemy.position = position + 50 * Vector2.UP
 	#get_parent().add_child(enemy)
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and not event.pressed:
+		emit_signal("clicked", self)

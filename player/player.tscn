@@ -11,6 +11,7 @@ size = Vector2(20, 40)
 [node name="Player" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_oul6g")
 lock_rotation = true
 custom_integrator = true
@@ -24,3 +25,5 @@ shape = SubResource("RectangleShape2D_kqu6x")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-10, -40, -10, 0, 10, 0, 10, -40)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

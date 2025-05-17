@@ -1,5 +1,7 @@
 class_name Part extends RigidBody2D
 
+signal clicked(node: PhysicsBody2D)
+
 
 func set_attachment(node: PhysicsBody2D):
 	pass
@@ -9,3 +11,13 @@ func set_attachment(node: PhysicsBody2D):
 # but subclasses can't override those
 func get_part_name():
 	return "Part"
+
+
+func _ready():
+	input_event.connect(_on_input_event)
+	input_pickable = true
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and not event.pressed:
+		emit_signal("clicked", self)

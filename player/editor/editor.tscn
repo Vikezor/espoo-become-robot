@@ -9,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 script = ExtResource("1_0vqve")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -19,8 +20,11 @@ mouse_filter = 2
 
 [node name="Container" type="Control" parent="CenterContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Player" parent="CenterContainer/Container" instance=ExtResource("1_m8qy8")]
+collision_layer = 1
+collision_mask = 1
 freeze = true
 
 [node name="Parts" type="VBoxContainer" parent="."]
@@ -44,5 +48,6 @@ grow_vertical = 0
 text = "Go"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="clicked" from="CenterContainer/Container/Player" to="." method="_on_clicked"]
 [connection signal="part_clicked" from="Parts" to="." method="_on_parts_part_clicked"]
 [connection signal="pressed" from="Go" to="." method="_on_go_pressed"]

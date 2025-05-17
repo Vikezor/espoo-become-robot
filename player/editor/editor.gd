@@ -8,8 +8,7 @@ const level_scene = preload("res://test/testlevel.tscn")
 
 func _on_parts_part_clicked(part):
 	spawned_part = part.duplicate()
-	player.add_child(spawned_part)
-	spawned_part.set_attachment(player)
+	$CenterContainer/Container.add_child(spawned_part)
 
 
 func _process(_delta):
@@ -17,9 +16,9 @@ func _process(_delta):
 		spawned_part.position = get_local_mouse_position() - $CenterContainer/Container.position
 
 
-func _on_gui_input(event):
-	if spawned_part != null and event is InputEventMouseButton and not event.pressed:
-		spawned_part = null
+#func _on_gui_input(event):
+	#if spawned_part != null and event is InputEventMouseButton and not event.pressed:
+		#spawned_part = null
 
 
 func _on_go_pressed():
@@ -34,3 +33,18 @@ func _on_go_pressed():
 			part.freeze = false
 	get_tree().root.add_child(level)
 	get_tree().root.remove_child(self)
+
+
+func _on_clicked(node):
+	if spawned_part != null:
+		spawned_part.add_collision_exception_with(node)
+		$CenterContainer/Container.remove_child(spawned_part)
+		node.add_child(spawned_part)
+		spawned_part.position -= node.position
+		spawned_part.clicked.connect(_on_clicked)
+		spawned_part = null
+
+#func _add_collision_exceptions_recursively(node_a: PhysicsBody2D, node_b):
+	#for part in node_b.get_children():
+		#node_a.add_collision_exception_with(node_b)
+		#_add_collision_exceptions_recursively(node_a, part)

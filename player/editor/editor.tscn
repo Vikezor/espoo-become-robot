@@ -29,4 +29,5 @@ offset_right = 8.0
 offset_bottom = 648.0
 script = ExtResource("1_r60tr")
 
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="part_clicked" from="Parts" to="." method="_on_parts_part_clicked"]

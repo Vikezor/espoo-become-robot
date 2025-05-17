@@ -28,9 +28,10 @@ func _on_go_pressed():
 	level.add_child(player)
 	player.position = spawnpos.position
 	player.freeze = false
-	for part in player.get_children():
-		if part is PhysicsBody2D:
-			part.freeze = false
+	#for part in player.get_children():
+		#if part is PhysicsBody2D:
+			#part.freeze = false
+	_unfreeze_recursively(player)
 	get_tree().root.add_child(level)
 	get_tree().root.remove_child(self)
 
@@ -44,7 +45,8 @@ func _on_clicked(node):
 		spawned_part.clicked.connect(_on_clicked)
 		spawned_part = null
 
-#func _add_collision_exceptions_recursively(node_a: PhysicsBody2D, node_b):
-	#for part in node_b.get_children():
-		#node_a.add_collision_exception_with(node_b)
-		#_add_collision_exceptions_recursively(node_a, part)
+func _unfreeze_recursively(node):
+	for part in node.get_children():
+		if part is PhysicsBody2D:
+			part.freeze = false
+		_unfreeze_recursively(part)

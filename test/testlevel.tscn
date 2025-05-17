@@ -1,14 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhm2qv6sy3h0k"]
-
-[ext_resource type="PackedScene" uid="uid://dxy0nyfnjr5j2" path="res://player/player.tscn" id="1_x1vuy"]
+[gd_scene load_steps=2 format=3 uid="uid://bhm2qv6sy3h0k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntvjx"]
 size = Vector2(1061, 65.755)
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_x1vuy")]
-position = Vector2(290, 338)
+[node name="Spawn" type="Node2D" parent="."]
+position = Vector2(287, 361)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(6.135, 499.245)

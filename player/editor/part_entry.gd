@@ -1,16 +1,15 @@
-class_name PartEntry extends HBoxContainer
+class_name PartEntry extends Button
 
-signal clicked(part: Part, event: InputEventMouseButton)
+signal clicked(part: Part)
 
 @export var part: Part:
 	get:
 		return part
 	set(value):
 		part = value
-		$Label.text = value.get_part_name()
+		text = value.get_part_name()
 		# TODO: set the icon
 
 
-func _on_gui_input(event):
-	if event is InputEventMouseButton and event.MouseButton == MOUSE_BUTTON_LEFT and event.pressed:
-		emit_signal("clicked", part, event)
+func _on_pressed():
+	emit_signal("clicked", part)

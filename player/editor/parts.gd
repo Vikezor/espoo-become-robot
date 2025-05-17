@@ -2,7 +2,7 @@ extends VBoxContainer
 
 const entry_scene = preload("res://player/editor/part_entry.tscn")
 
-signal part_clicked(part: Part, event: InputEvent)
+signal part_clicked(part: Part)
 
 func _ready():
 	for part in ResourceLoader.list_directory("res://player/parts/scenes"):
@@ -13,5 +13,5 @@ func _ready():
 		add_child(entry)
 		entry.clicked.connect(_on_clicked)
 
-func _on_clicked(part: Part, event: InputEventMouseButton):
-	emit_signal("part_clicked", part, event)
+func _on_clicked(part: Part):
+	emit_signal("part_clicked", part)

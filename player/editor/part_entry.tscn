@@ -2,25 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dlobdaj6ogs36" path="res://player/editor/part_entry.gd" id="1_80d14"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bqlem"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_80d14"]
+size = Vector2(12, 12)
 
-[node name="PartEntry" type="HBoxContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -960.0
-offset_bottom = -585.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PartEntry" type="Button"]
+offset_right = 105.0
+offset_bottom = 40.0
+text = "Placeholder"
+icon = SubResource("PlaceholderTexture2D_80d14")
 script = ExtResource("1_80d14")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_bqlem")
-expand_mode = 3
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-text = "Placeholder"
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

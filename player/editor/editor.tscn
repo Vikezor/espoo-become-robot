@@ -29,5 +29,20 @@ offset_right = 8.0
 offset_bottom = 648.0
 script = ExtResource("1_r60tr")
 
+[node name="Go" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -31.0
+offset_right = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go"
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="part_clicked" from="Parts" to="." method="_on_parts_part_clicked"]
+[connection signal="pressed" from="Go" to="." method="_on_go_pressed"]

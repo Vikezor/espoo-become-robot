@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://6se54wo3u548"]
+
+[ext_resource type="Script" uid="uid://dlobdaj6ogs36" path="res://player/editor/part_entry.gd" id="1_80d14"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bqlem"]
+
+[node name="PartEntry" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -585.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80d14")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_bqlem")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Placeholder"

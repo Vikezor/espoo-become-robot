@@ -7,12 +7,12 @@ size = Vector2(1061, 65.755)
 
 [node name="TestLevel" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource("1_x1vuy")]
+position = Vector2(290, 338)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(6.135, 499.245)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(536.365, 22.8775)
 shape = SubResource("RectangleShape2D_ntvjx")
-
-[node name="Player" parent="." instance=ExtResource("1_x1vuy")]
-position = Vector2(290, 338)

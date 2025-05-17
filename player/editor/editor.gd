@@ -29,5 +29,8 @@ func _on_go_pressed():
 	level.add_child(player)
 	player.position = spawnpos.position
 	player.freeze = false
+	for part in player.get_children():
+		if part is PhysicsBody2D:
+			part.freeze = false
 	get_tree().root.add_child(level)
 	get_tree().root.remove_child(self)

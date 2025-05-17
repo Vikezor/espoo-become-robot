@@ -1,6 +1,6 @@
 class_name PartEntry extends HBoxContainer
 
-signal clicked(part: Part, event: InputEvent)
+signal clicked(part: Part, event: InputEventMouseButton)
 
 @export var part: Part:
 	get:

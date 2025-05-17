@@ -21,7 +21,6 @@ color = Color(1, 0, 1, 1)
 polygon = PackedVector2Array(-10, -56, -10, 10, 10, 10, 10, -56)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-node_a = NodePath("../..")
 node_b = NodePath("..")
 motor_enabled = true
 motor_target_velocity = 12.2016

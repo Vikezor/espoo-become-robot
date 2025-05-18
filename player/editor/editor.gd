@@ -47,7 +47,7 @@ func _on_clicked(node):
 
 func _unfreeze_recursively(node):
 	for part in node.get_children():
-		if part is RigidPart:
+		if part is RigidBody2D:#RigidPart:
 			part.freeze = false
 		_unfreeze_recursively(part)
 

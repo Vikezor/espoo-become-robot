@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdfxmo55nvyvo"]
+
+[ext_resource type="Script" uid="uid://b2ukycue7sqrg" path="res://player/editor/editor.gd" id="1_0vqve"]
+[ext_resource type="PackedScene" uid="uid://dxy0nyfnjr5j2" path="res://player/player.tscn" id="1_m8qy8"]
+[ext_resource type="Script" uid="uid://fxmbcqpcewnf" path="res://player/editor/parts.gd" id="1_r60tr"]
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("1_0vqve")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="Container" type="Control" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Player" parent="CenterContainer/Container" instance=ExtResource("1_m8qy8")]
+collision_layer = 1
+collision_mask = 1
+freeze = true
+
+[node name="Parts" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 8.0
+offset_bottom = 648.0
+script = ExtResource("1_r60tr")
+
+[node name="Go" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -31.0
+offset_right = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="clicked" from="CenterContainer/Container/Player" to="." method="_on_clicked"]
+[connection signal="part_clicked" from="Parts" to="." method="_on_parts_part_clicked"]
+[connection signal="pressed" from="Go" to="." method="_on_go_pressed"]

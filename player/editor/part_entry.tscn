@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://6se54wo3u548"]
+
+[ext_resource type="Script" uid="uid://dlobdaj6ogs36" path="res://player/editor/part_entry.gd" id="1_80d14"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_80d14"]
+size = Vector2(12, 12)
+
+[node name="PartEntry" type="Button"]
+offset_right = 105.0
+offset_bottom = 40.0
+text = "Placeholder"
+icon = SubResource("PlaceholderTexture2D_80d14")
+script = ExtResource("1_80d14")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

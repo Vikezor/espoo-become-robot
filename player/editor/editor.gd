@@ -7,8 +7,9 @@ const level_scene = preload("res://node_2d.tscn")
 @onready var player = $CenterContainer/Container/Player
 
 func _on_parts_part_clicked(part):
-	spawned_part = part.duplicate()
-	$CenterContainer/Container.add_child(spawned_part)
+	if spawned_part == null:
+		spawned_part = part.duplicate()
+		$CenterContainer/Container.add_child(spawned_part)
 
 
 func _process(_delta):

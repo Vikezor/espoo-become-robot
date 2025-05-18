@@ -3,7 +3,7 @@ extends Control
 
 var spawned_part: PhysicsBody2D
 var clicking := false
-const level_scene = preload("res://test/testlevel.tscn")
+const level_scene = preload("res://node_2d.tscn")
 @onready var player = $CenterContainer/Container/Player
 
 func _on_parts_part_clicked(part):

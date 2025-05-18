@@ -1,9 +1,11 @@
-class_name Part extends RigidBody2D
+# oh i would LOVE to make this an AnimatableBody2D,
+# but then it doesn't collide with anything even though it should!
+class_name StaticPart extends RigidBody2D
 
-signal clicked(node: PhysicsBody2D)
+signal clicked(node: RigidBody2D)
 
 
-func set_attachment(node: PhysicsBody2D):
+func set_attachment(node: RigidBody2D):
 	pass
 
 

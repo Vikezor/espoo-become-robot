@@ -1,8 +1,8 @@
 class_name PartEntry extends Button
 
-signal clicked(part: Part)
+signal clicked(part: PhysicsBody2D)
 
-@export var part: Part:
+@export var part: PhysicsBody2D:
 	get:
 		return part
 	set(value):

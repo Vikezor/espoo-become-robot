@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhm2qv6sy3h0k"]
+[gd_scene load_steps=3 format=3 uid="uid://bhm2qv6sy3h0k"]
+
+[ext_resource type="PackedScene" uid="uid://uop01kxix3ai" path="res://player/parts/scenes/spinner.tscn" id="1_x1vuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntvjx"]
 size = Vector2(1061, 65.755)
@@ -16,3 +18,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(536.365, 22.8775)
 shape = SubResource("RectangleShape2D_ntvjx")
+
+[node name="Spinner" parent="StaticBody2D" instance=ExtResource("1_x1vuy")]
+position = Vector2(15.865, 0.755005)

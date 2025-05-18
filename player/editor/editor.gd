@@ -1,7 +1,7 @@
 extends Control
 
 
-var spawned_part: Part
+var spawned_part: PhysicsBody2D
 var clicking := false
 const level_scene = preload("res://test/testlevel.tscn")
 @onready var player = $CenterContainer/Container/Player
@@ -41,12 +41,17 @@ func _on_clicked(node):
 		spawned_part.add_collision_exception_with(node)
 		$CenterContainer/Container.remove_child(spawned_part)
 		node.add_child(spawned_part)
-		spawned_part.position -= node.position
+		_translate_recursively(spawned_part, node)
 		spawned_part.clicked.connect(_on_clicked)
 		spawned_part = null
 
 func _unfreeze_recursively(node):
 	for part in node.get_children():
-		if part is PhysicsBody2D:
+		if part is RigidPart:
 			part.freeze = false
 		_unfreeze_recursively(part)
+
+func _translate_recursively(new: PhysicsBody2D, old):
+	if old is PhysicsBody2D:
+		new.position -= old.position
+		_translate_recursively(new, old.get_parent())

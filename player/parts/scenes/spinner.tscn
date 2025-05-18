@@ -8,6 +8,7 @@
 size = Vector2(20, 66)
 
 [node name="Spinner" type="RigidBody2D"]
+collision_mask = 2
 mass = 0.015
 physics_material_override = SubResource("PhysicsMaterial_rkbax")
 script = ExtResource("1_06ph2")

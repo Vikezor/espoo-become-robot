@@ -23,8 +23,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="Player" parent="CenterContainer/Container" instance=ExtResource("1_m8qy8")]
-collision_layer = 1
-collision_mask = 1
 freeze = true
 
 [node name="Parts" type="VBoxContainer" parent="."]

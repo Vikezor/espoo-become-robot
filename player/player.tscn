@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxy0nyfnjr5j2"]
+[gd_scene load_steps=5 format=3 uid="uid://dxy0nyfnjr5j2"]
 
 [ext_resource type="Script" uid="uid://uhf7nmecr21i" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://cybfonebsfvoj" path="res://Roach.png.png" id="2_rkbax"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oul6g"]
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
-size = Vector2(20, 40)
+size = Vector2(31, 18)
 
 [node name="Player" type="RigidBody2D"]
 collision_layer = 2
@@ -21,10 +22,11 @@ max_contacts_reported = 4
 script = ExtResource("1_oul6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0.5, -9)
 shape = SubResource("RectangleShape2D_kqu6x")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(-10, -40, -10, 0, 10, 0, 10, -40)
+[node name="Roach_png" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("2_rkbax")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

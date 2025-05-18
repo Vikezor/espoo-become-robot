@@ -48,7 +48,12 @@ func _on_clicked(node):
 func _unfreeze_recursively(node):
 	for part in node.get_children():
 		if part is RigidPart:
-			part.freeze = false
+			#part.freeze = false
+			#if part is Spinner:
+				## WARNING: a hack
+				#part.start_counting()
+			part.begin()
+		#part.process_mode = Node.PROCESS_MODE_INHERIT
 		_unfreeze_recursively(part)
 
 func _translate_recursively(new: PhysicsBody2D, old):

@@ -9,6 +9,7 @@ func _ready():
 		var loaded: PhysicsBody2D = load("res://player/parts/scenes/" + part).instantiate()
 		if loaded is RigidBody2D:
 			loaded.freeze = true
+			#loaded.process_mode = Node.PROCESS_MODE_DISABLED
 		var entry: PartEntry = entry_scene.instantiate()
 		entry.part = loaded
 		add_child(entry)

@@ -26,6 +26,7 @@ position = Vector2(0.5, -9)
 shape = SubResource("RectangleShape2D_kqu6x")
 
 [node name="Roach_png" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -13)
 texture = ExtResource("2_rkbax")
 

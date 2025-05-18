@@ -10,8 +10,6 @@ size = Vector2(20, 66)
 [node name="Spinner" type="RigidBody2D"]
 mass = 0.015
 physics_material_override = SubResource("PhysicsMaterial_rkbax")
-freeze = true
-freeze_mode = 1
 script = ExtResource("1_06ph2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,3 +19,9 @@ shape = SubResource("RectangleShape2D_oul6g")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(1, 0, 1, 1)
 polygon = PackedVector2Array(-10, -56, -10, 10, 10, 10, 10, -56)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+motor_enabled = true
+motor_target_velocity = 12.2016

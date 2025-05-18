@@ -14,6 +14,9 @@ func _on_parts_part_clicked(part):
 func _process(_delta):
 	if spawned_part != null:
 		spawned_part.position = get_local_mouse_position() - $CenterContainer/Container.position
+		if Input.is_action_pressed("cancel"):
+			$CenterContainer/Container.remove_child(spawned_part)
+			spawned_part = null
 
 
 #func _on_gui_input(event):

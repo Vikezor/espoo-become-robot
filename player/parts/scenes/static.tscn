@@ -8,6 +8,7 @@
 size = Vector2(20, 66)
 
 [node name="Static" type="RigidBody2D"]
+mass = 0.015
 physics_material_override = SubResource("PhysicsMaterial_rkbax")
 freeze = true
 freeze_mode = 1
